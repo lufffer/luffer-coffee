@@ -1,5 +1,5 @@
 const path = require("path");
-// const Dotenv = require("dotenv-webpack");
+const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
@@ -24,7 +24,7 @@ module.exports = {
     extensions: [".js", ".ts"],
   },
   plugins: [
-    // new Dotenv(),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
