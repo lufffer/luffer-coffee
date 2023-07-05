@@ -1,0 +1,101 @@
+<!DOCTYPE html />
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="This is Luffee Coffee website" />
+  <title>Luffer Coffee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Send+Flowers&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- home section -->
+  <main class="flex h-screen flex-col items-center justify-evenly lg:flex-row">
+    <h1 class="text-5xl font-bold leading-snug text-secondary lg:text-center lg:text-9xl lg:leading-snug">
+      Luffer<br />Coffee
+    </h1>
+    <image src="./assets/logo.svg" alt="title image" className="w-1/2 h-1/2 mt-12 lg:w-3/4 lg:h-3/4" />
+  </main>
+
+  <!-- gallery and about sections -->
+  <div class="lg:flex">
+    <!-- gallery section -->
+    <div class="lg:flex lg:w-1/2 lg:items-center lg:justify-center">
+      <section class="lg:h-screen lg:w-full" id="gallery">
+        <h2 class="mt-20 flex-1 text-center text-xl font-bold text-secondary">
+          --Gallery--
+        </h2>
+      </section>
+    </div>
+    <!-- about section -->
+    <div class="lg:flex lg:w-1/2 lg:items-center lg:justify-center">
+      <section class="lg:h-screen lg:w-full">
+        <h2 class="mt-20 flex-1 text-center text-xl font-bold text-secondary">
+          --About Us--
+        </h2>
+        <p class="mx-auto mt-12 w-3/4 flex-1 text-center text-2xl text-secondary lg:text-3xl xl:text-4xl 2xl:text-5xl">
+          Welcome to Luffee Coffee, where the perfect cup of coffee is a work
+          of art. As a distinguished coffee company, we are passionate about
+          sourcing, roasting, and brewing exceptional coffee beans from around
+          the world. Step into our cozy café or explore our online store, and
+          let us take you on a journey of exquisite flavors and rich aromas
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- menu section -->
+  <section id="menu" class="hidden xl:block xl:h-screen">
+    <h2 class="mt-20 flex-1 text-center text-xl font-bold text-secondary">
+      --Menu--
+    </h2>
+  </section>
+
+  <!-- contact section -->
+  <section class="lg:h-screen">
+    <h2 class="mt-20 flex-1 text-center text-xl font-bold text-secondary">
+      --Contact Us--
+    </h2>
+    <div class="h-full lg:flex">
+      <div class="lg:h-full lg:w-1/2">
+        <form id="form" name="form"
+          class="mx-auto mt-12 flex w-3/4 flex-col gap-4 lg:mt-0 lg:h-full lg:justify-evenly lg:gap-0">
+          <input placeholder="Enter name" name="name" data-rules="required|between:2,20"
+            class="rounded-2xl bg-secondary p-4 font-bold placeholder:font-bold placeholder:text-primary" />
+          <input type="email" placeholder="Enter email" name="email" data-rules="required|email"
+            class="rounded-2xl bg-secondary p-4 font-bold placeholder:font-bold placeholder:text-primary" />
+          <input type="text" placeholder="Enter subject" name="subject" data-rules="required"
+            class="rounded-2xl bg-secondary p-4 font-bold placeholder:font-bold placeholder:text-primary" />
+          <textarea placeholder="Enter message" rows="5" name="message" data-rules="required"
+            class="rounded-2xl bg-secondary p-4 font-bold placeholder:font-bold placeholder:text-primary"></textarea>
+          <button id="button" type="submit"
+            class="relative mx-auto block w-full rounded-xl border-0 bg-secondary p-2 text-2xl font-bold text-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="lg:flex lg:h-full lg:w-1/2 lg:items-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1485.6002381552198!2d-87.651038!3d41.867033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ce522ef1a63%3A0x8c72492ba7108a09!2s999%20Roosevelt%20Rd%2C%20Chicago%2C%20IL%2060608%2C%20USA!5e0!3m2!1sen!2sar!4v1686930305340!5m2!1sen!2sar"
+          loading="lazy" class="mx-auto mt-12 h-[50vh] w-3/4 rounded-3xl border-0 lg:mt-0 xl:h-[75vh]"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="mt-5 w-full text-center font-bold text-secondary">
+    © Copyright 20XX - 20XX,
+    <br />
+    All rights reserved.
+  </footer>
+</body>
+
+</html>
