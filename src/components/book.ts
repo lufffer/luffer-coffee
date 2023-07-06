@@ -17,7 +17,11 @@ export default class Book {
   private createCover = () => {
     const $COVER = document.createElement("div");
     $COVER.setAttribute("data-density", "hard");
-    $COVER.setAttribute("class", styles["page"]);
+    $COVER.setAttribute("class", `${styles["page"]}`);
+    $COVER.setAttribute(
+      "style",
+      "{top: 0 !important; padding: 0 !important; margin: 0 !important; width: 100% !important; height: 100% !important;}"
+    );
     $COVER.innerHTML = `
       <div class=${styles["cover-title-container"]}>
     <h3 class=${styles["cover-title"]} >

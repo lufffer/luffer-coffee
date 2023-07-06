@@ -76,6 +76,10 @@ form p {
   width: 100%;
 }
 
+.my-top-0 {
+  top: 0 !important;
+}
+
 @media (min-width: 1200px) {
   .carousel {
     height: 75%;

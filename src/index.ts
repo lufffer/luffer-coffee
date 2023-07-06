@@ -21,22 +21,20 @@ document.getElementById("gallery").appendChild(CAROUSEL.getCarousel());
 
 const BOOK = new Book();
 const $BOOK = BOOK.createFlipBook();
-document.getElementById("menu").appendChild($BOOK);
+const $MENU = document.getElementById("menu");
 const pageFlip = new PageFlip($BOOK, {
-  width: (30 * window.innerWidth) / 100,
+  width: window.innerWidth / 2,
   height: (75 * window.innerHeight) / 100,
-  showCover: true,
   size: "stretch" as SizeType,
-  maxWidth: (30 * window.innerWidth) / 100,
-  maxHeight: (75 * window.innerHeight) / 100,
+  showCover: true,
 });
-pageFlip.loadFromHTML(document.querySelectorAll(`.${BOOK.getClassName()}`));
+
+pageFlip.loadFromHTML($BOOK.querySelectorAll(`.${BOOK.getClassName()}`));
+$MENU.appendChild($BOOK);
 window.addEventListener("resize", () => {
-  pageFlip.getSettings().width = (30 * window.innerWidth) / 100;
-  pageFlip.getSettings().height = (75 * window.innerHeight) / 100;
-  pageFlip.getSettings().maxWidth = (30 * window.innerWidth) / 100;
-  pageFlip.getSettings().maxHeight = (70 * window.innerHeight) / 100;
-  pageFlip.loadFromHTML(document.querySelectorAll(`.${BOOK.getClassName()}`));
+  pageFlip.getSettings().width = $MENU.clientWidth / 2;
+  pageFlip.getSettings().height = $MENU.clientHeight;
+  pageFlip.update();
 });
 
 const $FORM = document.getElementById("form");
