@@ -2,9 +2,9 @@ import emailjs from "@emailjs/browser";
 
 export default async function sendForm(form: HTMLFormElement) {
   return await emailjs.sendForm(
-    process.env.SERVICE,
-    process.env.TEMPLATE,
+    "service_erzi7xl",
+    "template_1ps1s56",
     form,
-    process.env.ID
+    "qIcdoN51ll0v6xXgl"
   );
 }
