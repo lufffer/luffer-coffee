@@ -1,37 +1,42 @@
+import "luffer-carousel-vanilla/dist/main.css";
 import "../node_modules/spin.js/spin.css";
 import "../node_modules/toastify-js/src/toastify.css";
+import "page-flip/src/Style/stPageFlip.css";
 import "./styles.css";
 import { PageFlip, SizeType } from "page-flip";
 import { Spinner } from "spin.js";
 import Toastify, { Options } from "toastify-js";
 import { Validator, enLang, createLang } from "@upjs/facile-validator";
-import Carousel from "./components/carousel";
+import Carousel from "luffer-carousel-vanilla";
 import Book from "./components/book";
 import {
+  carouselConfig,
   spinneConfig,
   toastifyConfigError,
   toastifyConfigSuccess,
 } from "./config/config";
-import { IMAGES } from "./data/data";
+import images from "./data/data";
 import sendForm from "./services/api";
 
-const CAROUSEL = new Carousel(IMAGES);
-CAROUSEL.createCarousel("carousel", "image");
-document.getElementById("gallery").appendChild(CAROUSEL.getCarousel());
+document.getElementById("gallery").appendChild(new Carousel(images, carouselConfig).getCarousel());
 
+let inDom = false;
 const BOOK = new Book();
 const $BOOK = BOOK.createFlipBook();
 const $MENU = document.getElementById("menu");
 const pageFlip = new PageFlip($BOOK, {
-  width: window.innerWidth / 2,
-  height: (75 * window.innerHeight) / 100,
+  width: Math.floor(((75 * window.innerWidth) / 100) / 2 - 5),
+  height: (75 * window.innerHeight) / 100, 
   size: "stretch" as SizeType,
   showCover: true,
 });
-
 pageFlip.loadFromHTML($BOOK.querySelectorAll(`.${BOOK.getClassName()}`));
-$MENU.appendChild($BOOK);
+if (window.innerWidth > 1200) {
+  $MENU.appendChild($BOOK);
+  inDom = true;
+}
 window.addEventListener("resize", () => {
+  if (inDom === false) return;
   pageFlip.getSettings().width = $MENU.clientWidth / 2;
   pageFlip.getSettings().height = $MENU.clientHeight;
   pageFlip.update();

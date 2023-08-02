@@ -54,8 +54,7 @@ export default class Book {
       const $PAGE = document.createElement("div");
       $PAGE.setAttribute(
         "class",
-        `${
-          i % 2 === 0 ? styles["page-shadow-right"] : styles["page-shadow-left"]
+        `${i % 2 === 0 ? styles["page-shadow-right"] : styles["page-shadow-left"]
         } ${styles["page"]} ${styles["middle-page"]}`
       );
       $PAGE.innerHTML = `

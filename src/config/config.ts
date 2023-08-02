@@ -1,3 +1,7 @@
+export const carouselConfig = {
+  class: "carousel"
+};
+
 export const spinneConfig = {
   lines: 10, // The number of lines to draw
   length: 10, // The length of each line
